@@ -1,2 +1,2 @@
-# my-resource-packs-java
+# resource-packs-java
 website
