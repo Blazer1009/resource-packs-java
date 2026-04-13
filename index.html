@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <title>Blazer1009's Java Resource Packs</title>
 <link rel="stylesheet" href="style.css">
+
 <style>
   /* GitHub Icon Styles */
   #github-link {
-    position: fixed;   /* Stays in place while scrolling */
-    top: 10px;         /* Distance from top */
-    right: 10px;       /* Distance from right */
-    width: 30px;       /* Size of the icon */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
     height: 30px;
-    z-index: 1000;     /* On top of other elements */
+    z-index: 1000;
   }
 
   #github-link img {
@@ -22,25 +23,57 @@
   }
 
   #github-link:hover img {
-    transform: scale(1.2); /* Slight zoom on hover */
+    transform: scale(1.2);
   }
 </style>
 </head>
+
 <body>
+
   <!-- GitHub icon -->
   <a href="https://github.com/Blazer1009" target="_blank" id="github-link">
     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" />
   </a>
 
   <h1>Blazer1009's Java Resource Packs</h1>
+
   <div class="pack-gallery" id="gallery"></div>
+
+  <!-- FAQ SECTION -->
+  <section class="faq">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <h3>How do I use these resource packs?</h3>
+      <p>Download the ZIP file and place it into your Minecraft resourcepacks folder, then enable it in-game.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need mods for these packs?</h3>
+      <p>No. All packs are vanilla Minecraft Java resource packs unless stated otherwise.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does the ticket pack work?</h3>
+      <p>Rename Light 0 in an anvil to "Ticket" and it will turn into a custom ticket item. Perfect for servers, events, and maps.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why do some packs have two versions?</h3>
+      <p>The vanilla version works without extra changes, while the enhanced version includes extra visuals or features.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I use these on servers?</h3>
+      <p>Yes, as long as the server allows resource packs. They are designed for server and multiplayer use.</p>
+    </div>
+  </section>
 
   <script>
     async function loadPacks() {
       const gallery = document.getElementById('gallery');
 
-      // List of pack folders
-      const packsResponse = await fetch('packs/packs.json'); // master JSON listing all folders
+      const packsResponse = await fetch('packs/packs.json');
       const packFolders = await packsResponse.json();
 
       for (const folder of packFolders) {
@@ -49,15 +82,25 @@
 
         const div = document.createElement('div');
         div.className = 'pack';
-        div.innerHTML = `<img src="packs/${folder}/screenshot.png" alt="${pack.name}">
-                         <h2>${pack.name}</h2>`;
-        if (pack.github) div.innerHTML += `<a href="packs/${folder}/${pack.github}" class="github">Download</a>`;
-        if (pack.modrinth) div.innerHTML += `<a href="${pack.modrinth}" class="modrinth" target="_blank">Download on Modrinth</a>`;
+
+        div.innerHTML = `
+          <img src="packs/${folder}/screenshot.png" alt="${pack.name}">
+          <h2>${pack.name}</h2>
+          <p class="pack-desc">${pack.description || "No description yet."}</p>
+        `;
+
+        if (pack.github)
+          div.innerHTML += `<a href="packs/${folder}/${pack.github}" class="github">Download</a>`;
+
+        if (pack.modrinth)
+          div.innerHTML += `<a href="${pack.modrinth}" class="modrinth" target="_blank">Download on Modrinth</a>`;
+
         gallery.appendChild(div);
       }
     }
 
     loadPacks();
   </script>
+
 </body>
 </html>
