@@ -1,4 +1,5 @@
 {
   "name": "My Ticket",
+  "description": "Turns Light 0 into a custom ticket item for servers and events.",
   "modrinth": "https://modrinth.com/resourcepack/my-ticket-java-resource-pack"
 }
