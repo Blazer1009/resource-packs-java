@@ -10,6 +10,31 @@ h1 {
   color: #333;
 }
 
+/* ===================== */
+/* SWITCH BUTTON         */
+/* ===================== */
+
+.switch-container {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.java-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #2ecc71;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.java-link:hover {
+  background: #27ae60;
+  transform: scale(1.05);
+}
+
 /* PACK GRID */
 .pack-gallery {
   display: grid;
@@ -60,10 +85,12 @@ h1 {
   transition: opacity 0.2s;
 }
 
+/* Java DOWNLOAD BUTTON */
 .pack a.github {
   background: #4CAF50;
 }
 
+/* OPTIONAL (if you ever re-add Modrinth later) */
 .pack a.modrinth {
   background: #FF6600;
 }
