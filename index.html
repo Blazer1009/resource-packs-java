@@ -37,6 +37,13 @@
 
   <h1>Blazer1009's Java Resource Packs</h1>
 
+  <!-- 🔁 SWITCH TO BEDROCK -->
+  <div class="switch-container">
+    <a class="java-link" href="https://blazer1009.github.io/resource-packs-bedrock/">
+      ⛏️ Switch to Bedrock Edition Packs
+    </a>
+  </div>
+
   <div class="pack-gallery" id="gallery"></div>
 
   <!-- FAQ SECTION -->
@@ -89,9 +96,11 @@
           <p class="pack-desc">${pack.description || "No description yet."}</p>
         `;
 
+        // Direct download (GitHub or file link)
         if (pack.github)
-          div.innerHTML += `<a href="packs/${folder}/${pack.github}" class="github">Download</a>`;
+          div.innerHTML += `<a href="${pack.github}" class="github">Download</a>`;
 
+        // Modrinth support
         if (pack.modrinth)
           div.innerHTML += `<a href="${pack.modrinth}" class="modrinth" target="_blank">Download on Modrinth</a>`;
 
