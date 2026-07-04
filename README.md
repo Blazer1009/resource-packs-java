@@ -1,2 +1,2 @@
 # resource-packs-java
-website
+website: https://blazer1009.github.io/resource-packs-java/
