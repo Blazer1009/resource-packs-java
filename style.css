@@ -11,11 +11,12 @@ h1 {
 }
 
 /* ===================== */
-/* SWITCH BUTTON (NEW) */
+/* SWITCH BUTTON (FIXED CENTERING) */
 /* ===================== */
 
 .switch-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 15px 0;
 }
 
