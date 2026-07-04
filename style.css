@@ -11,7 +11,7 @@ h1 {
 }
 
 /* ===================== */
-/* SWITCH BUTTON         */
+/* SWITCH BUTTON (NEW) */
 /* ===================== */
 
 .switch-container {
@@ -85,12 +85,10 @@ h1 {
   transition: opacity 0.2s;
 }
 
-/* BEDROCK DOWNLOAD BUTTON */
 .pack a.github {
   background: #4CAF50;
 }
 
-/* OPTIONAL (if you ever re-add Modrinth later) */
 .pack a.modrinth {
   background: #FF6600;
 }
