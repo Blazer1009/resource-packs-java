@@ -1,5 +1,6 @@
 {
   "name": "My Ticket",
   "description": "Turns Light 0 into a custom ticket item for servers and events.",
-  "modrinth": "https://modrinth.com/resourcepack/my-ticket"
+  "normal": "https://github.com/Blazer1009/my-ticket-java/releases/download/26.3/MyTicketNoExtraMods-26.3.zip",
+  "full": "https://github.com/Blazer1009/my-ticket-java/releases/download/26.3/MyTicket-26.3.zip"
 }
