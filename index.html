@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@
 <body>
 
   <!-- GitHub icon -->
-  <a href="https://github.com/Blazer1009" target="_blank" id="github-link">
+  <a href="https://github.com/Blazer1009" target="_blank" rel="noopener noreferrer" id="github-link">
     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" />
   </a>
 
@@ -39,10 +40,10 @@
 
   <!-- 🔁 SWITCH TO BEDROCK -->
   <div class="switch-container">
-  <a class="java-link" href="https://blazer1009.github.io/resource-packs-bedrock/">
-    ⛏️ Switch to Bedrock Edition Packs
-  </a>
-</div>
+    <a class="java-link" href="https://blazer1009.github.io/resource-packs-bedrock/">
+      ⛏️ Switch to Bedrock Edition Packs
+    </a>
+  </div>
 
   <div class="pack-gallery" id="gallery"></div>
 
@@ -96,13 +97,32 @@
           <p class="pack-desc">${pack.description || "No description yet."}</p>
         `;
 
-        // Direct download (GitHub or file link)
-        if (pack.github)
-          div.innerHTML += `<a href="${pack.github}" class="github">Download</a>`;
+        // Direct download
+        if (pack.github) {
+          div.innerHTML += `
+            <a href="${pack.github}" class="github" target="_blank" rel="noopener noreferrer">
+              Download
+            </a>
+          `;
+        }
 
-        // Modrinth support
-        if (pack.modrinth)
-          div.innerHTML += `<a href="${pack.modrinth}" class="modrinth" target="_blank">Download on Modrinth</a>`;
+        // My Ticket normal version
+        if (pack.normal) {
+          div.innerHTML += `
+            <a href="${pack.normal}" class="github" target="_blank" rel="noopener noreferrer">
+              Download (Normal)
+            </a>
+          `;
+        }
+
+        // My Ticket extra mods version
+        if (pack.full) {
+          div.innerHTML += `
+            <a href="${pack.full}" class="github" target="_blank" rel="noopener noreferrer">
+              Download (🔥 Extra Mods)
+            </a>
+          `;
+        }
 
         gallery.appendChild(div);
       }
@@ -113,3 +133,4 @@
 
 </body>
 </html>
+```
